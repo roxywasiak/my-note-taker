@@ -6,8 +6,10 @@ const routes = require("./routes");
 
 //declare the port
 const PORT = process.env.PORT || 4000;
+
 //make an instance of express
 const app = express();
+
 //add the middleware
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
