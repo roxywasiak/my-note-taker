@@ -6,10 +6,7 @@
 
 - [Description](#description)
 - [Installation](#installation)
-- [Deployed-app](#deployed-app)
-- [Launch-the-app](#Launch-app)
-- [Screenshots](#screenshots)
-- [Contact me](#contact-me)
+- [Launch-the-app](#launch-the-app)
 
 ## Description 📕
 
