@@ -5,13 +5,14 @@ const path = require("path");
 const renderNotes = (req, res) => {
   console.log(res);
   const filePath = path.join(__dirname, "../../../public/notes.html");
-  res.sendFile(filePath);
+  return res.sendFile(filePath);
 };
 
 //render your notes page
 const renderHome = (req, res) => {
   console.log(res);
   const filePath = path.join(__dirname, "../../../public/index.html");
+  return res.sendFile(filePath);
 };
 
 //export the modules

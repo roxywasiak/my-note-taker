@@ -15,10 +15,9 @@ const {
 //deleteNotes
 
 const newRouter = Router();
-newRouter.get();
-newRouter.post();
-newRouter.put();
-newRouter.delete();
+newRouter.get("/notes", getNotes);
+newRouter.post("/notes", postNotes);
+newRouter.delete("/notes/:id", deleteNotes);
 
 //export the modules
 module.exports = newRouter;

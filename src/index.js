@@ -15,7 +15,7 @@ app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json({ extended: true }));
 app.use(express.static("public"));
-app.use("routes");
+app.use(routes);
 //app listen
 app.listen(PORT, () => {
   console.log(`Listening on http://localhost:${PORT}`);
