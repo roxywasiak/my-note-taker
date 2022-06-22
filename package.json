@@ -1,0 +1,27 @@
+{
+  "name": "my-note-taker",
+  "version": "1.0.0",
+  "description": "An application to create, save and delete notes",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/index.js",
+    "start": "node src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/roxywasiak/my-note-taker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/roxywasiak/my-note-taker/issues"
+  },
+  "homepage": "https://github.com/roxywasiak/my-note-taker#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "nodemon": "^2.0.16",
+    "uuid": "^8.3.2"
+  }
+}
