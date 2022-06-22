@@ -7,7 +7,9 @@ const { readFromFile, writeToFile } = require("../../utils");
 //get request for api route
 const getNotes = (req, res) => {
   try {
-    return res.json(readFromFile("db"));
+    const notes = readFromFile("db");
+    console.log(notes);
+    return res.json(notes);
   } catch (error) {
     console.error(error.message);
     return res.status(500).json({ error: "An error has occurred" });
@@ -17,13 +19,14 @@ const getNotes = (req, res) => {
 //post request
 const postNotes = (req, res) => {
   try {
-    let rawData = readFromFile("db");
-    let { title, text } = req.body;
+    const notes = readFromFile("db");
+    const { title, text } = req.body;
     const id = uuidv4();
-    let makeNote = { title, text, id };
+    const note = { title, text, id };
+    notes.push(note);
 
-    writeToFile("db", [makeNote, rawData]);
-    return res.json(makeNote);
+    writeToFile("db", notes);
+    return res.json({ message: "A note has been created." });
   } catch (error) {
     console.log(error.message);
     return res.status(500).json({ error: "An error has occurred" });
@@ -39,8 +42,8 @@ const postNotes = (req, res) => {
 const deleteNotes = (req, res) => {
   try {
     const { id } = req.params;
-    const noteDelete = readFromFile("db").filter((note) => note.id !== id);
-    writeToFile("db", noteDelete);
+    const filteredNotes = readFromFile("db").filter((note) => note.id !== id);
+    writeToFile("db", filteredNotes);
     return res.status(200).json({ message: "A note has been deleted." });
   } catch (error) {
     console.error(error.message);
